@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     openai_api_key: str
     openai_model: str = "gpt-4o-mini"
     openai_embedding_model: str = "text-embedding-3-small"
-    allow_origins: str= "http://localhost:5174"
+    allowed_origins: str = ("http://localhost:5173,http://localhost:8080")
     model_config = SettingsConfigDict(
         env_file=_ENV_FILE,
         env_file_encoding="utf-8",

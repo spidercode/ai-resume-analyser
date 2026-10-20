@@ -15,6 +15,11 @@ from app.services.embedding_service import EmbeddingError, calculate_similarity
 from app.services.resume_extractor import (ResumeExtractionError, extract_resume_profile)
 
 
+origins = [
+    origin.strip()
+    for origin in settings.allowed_origins.split(",")
+    if origin.strip()
+]
 
 app = FastAPI(
     title="AI Resume Analyzer",
@@ -24,10 +29,10 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.allow_origins],
+    allow_origins=origins,
     allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "Authorization"],
 )
 
 class JobDescriptionRequest(BaseModel):
