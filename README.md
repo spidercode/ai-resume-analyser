@@ -4,6 +4,10 @@ An AI-powered application that analyzes resumes against job descriptions, extrac
 
 Built to explore practical AI engineering patterns, including structured LLM outputs, embedding-based similarity, evidence validation, automated testing, and containerized application development.
 
+## Application Preview
+
+![ResumeIQ dashboard showing resume parsing, semantic matching, and evidence-based skill-gap analysis](docs/images/dashboard.png)
+
 ## Features
 
 - **Resume parsing:** Extract text from PDF and DOCX files.
@@ -148,7 +152,7 @@ npm run dev
 
 Configure `VITE_API_BASE_URL` to point to the backend, using the frontend's expected environment configuration.
 
-Open the local URL printed by Vite, normally http://localhost:5174.
+Open the local URL printed by Vite, normally http://localhost:5173.
 
 ### Docker setup
 
